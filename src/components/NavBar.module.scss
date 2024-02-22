@@ -1,0 +1,28 @@
+.nav {
+  justify-self: flex-end;
+}
+
+.list {
+  display: flex;
+  gap: 48px;
+  font-size: 1.5rem;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.active {
+  composes: link;
+  outline: 2px dashed var(--main-colour);
+  outline-offset: 8px;
+  border-radius: 8px;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+}
