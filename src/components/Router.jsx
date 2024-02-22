@@ -6,6 +6,15 @@ function Router() {
     {
       path: '/',
       element: <App />,
+      errorElement: <App route="error" />,
+    },
+    {
+      path: '/products',
+      element: <App route="products" />,
+    },
+    {
+      path: '/cart',
+      element: <App route="cart" />,
     },
   ]);
 
