@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+html {
+  --bg-colour: #ddd0c8;
+  --main-colour: #323232;
+  --main-font: 'Source Sans 3', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--bg-colour);
+  color: var(--main-colour);
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+#root {
+  max-width: 1200px;
 }
