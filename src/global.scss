@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 html {
   --bg-colour: #ddd0c8;
   --main-colour: #323232;
   --main-font: 'Source Sans 3', sans-serif;
+  --secondary-font: 'Lobster', sans-serif;
 }
 
 * {
@@ -18,4 +19,5 @@ html {
 
 #root {
   max-width: 1200px;
+  padding: 1em;
 }
