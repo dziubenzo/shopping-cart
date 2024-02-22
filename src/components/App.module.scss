@@ -1,6 +1,15 @@
-.header {
+header {
   display: flex;
   align-items: center;
   padding-bottom: 0.75em;
-  border-bottom: 3px solid var(--main-colour);
+  border-bottom: var(--header-footer-border);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-top: 0.75em;
+  border-top: var(--header-footer-border);
 }

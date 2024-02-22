@@ -5,6 +5,7 @@ html {
   --main-colour: #323232;
   --main-font: 'Source Sans 3', sans-serif;
   --secondary-font: 'Lobster', sans-serif;
+  --header-footer-border: 3px solid var(--main-colour);
 }
 
 * {
@@ -18,7 +19,10 @@ html {
 }
 
 #root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   max-width: 1200px;
+  min-height: 100svh;
   padding: 1em;
   margin: auto;
 }
