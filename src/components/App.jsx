@@ -6,6 +6,7 @@ import ErrorPage from './ErrorPage';
 import css from './App.module.scss';
 import AppTitle from './AppTitle';
 import NavBar from './NavBar';
+import DevInfo from './DevInfo';
 
 function App({ route }) {
   return (
@@ -21,7 +22,7 @@ function App({ route }) {
         {route === 'error' && <ErrorPage />}
       </main>
       <footer>
-        <h2>Footer</h2>
+        <DevInfo />
       </footer>
     </>
   );
