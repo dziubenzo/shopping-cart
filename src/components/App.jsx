@@ -5,12 +5,14 @@ import Cart from './Cart';
 import ErrorPage from './ErrorPage';
 import css from './App.module.scss';
 import AppTitle from './AppTitle';
+import NavBar from './NavBar';
 
 function App({ route }) {
   return (
     <>
-      <header>
+      <header className={css.header}>
         <AppTitle />
+        <NavBar />
       </header>
       <main>
         {route === 'home' && <Home />}
