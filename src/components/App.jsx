@@ -3,7 +3,7 @@ import styles from './App.module.scss';
 function App() {
   return (
     <>
-      <div className={styles.test}>Working!</div>
+      <div className={styles.test}>Shopping Cart</div>
     </>
   );
 }
