@@ -7,8 +7,15 @@ import AppTitle from './AppTitle';
 import NavBar from './NavBar';
 import DevInfo from './DevInfo';
 import css from './App.module.scss';
+import useFetch from '../helpers.jsx';
 
 function App({ route }) {
+  // Fetch data from Fake Store API
+  const { data, error, loading } = useFetch(
+    'https://fakestoreapi.com/products',
+  );
+
+  console.log(data);
   return (
     <>
       <header className={css.header}>
@@ -17,7 +24,9 @@ function App({ route }) {
       </header>
       <main>
         {route === 'home' && <Home />}
-        {route === 'products' && <Products />}
+        {route === 'products' && (
+          <Products products={data} error={error} loading={loading} />
+        )}
         {route === 'cart' && <Cart />}
         {route === 'error' && <ErrorPage />}
       </main>
