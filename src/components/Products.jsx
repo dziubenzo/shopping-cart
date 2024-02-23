@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
+import css from './Products.module.scss';
 
 function Products({ products, error, loading }) {
   // Create ProductCard components for all products
@@ -21,20 +22,16 @@ function Products({ products, error, loading }) {
     }
     return productArray;
   }
-
-  function renderProducts() {
-    return (
-      <>
-        <h1>All Products ({products.length})</h1>
-        <div>{createCards()}</div>
-      </>
-    );
-  }
   return (
     <>
       {error && <h1>{error.message}</h1>}
       {loading && <h1>Loading products...</h1>}
-      {products && renderProducts()}
+      {products && (
+        <>
+          <h1 className={css.allProducts}>All Products ({products.length})</h1>
+          <div className={css.cards}>{createCards()}</div>
+        </>
+      )}
     </>
   );
 }

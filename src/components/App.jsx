@@ -15,7 +15,6 @@ function App({ route }) {
     'https://fakestoreapi.com/products',
   );
 
-  console.log(data);
   return (
     <>
       <header className={css.header}>
