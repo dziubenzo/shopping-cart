@@ -5,6 +5,11 @@ header {
   border-bottom: var(--header-footer-border);
 }
 
+main {
+  display: grid;
+  place-items: center;
+}
+
 footer {
   display: flex;
   flex-direction: column;
