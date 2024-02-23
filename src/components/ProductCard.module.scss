@@ -1,0 +1,124 @@
+.card {
+  display: flex;
+  gap: 16px;
+  outline: 1px solid var(--main-colour);
+  border-radius: 8px;
+  box-shadow:
+    rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.cardImageWrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-right: 1px solid var(--main-colour);
+  border-radius: 8px 0 0 8px;
+
+  .cardImage {
+    max-width: 200px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in;
+  }
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0.5em;
+
+  .title {
+    font-size: 1.5rem;
+    min-height: 70px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    min-height: 90px;
+    font-style: italic;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .rating {
+    grid-area: rating;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: auto;
+
+    .star {
+      background: transparent;
+      filter: var(--star-icon-colour);
+      width: 22px;
+      margin-right: auto;
+    }
+  }
+}
+
+.quantity {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+
+  .button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+  }
+
+  .buttonIcon {
+    display: block;
+    height: 32px;
+    width: 32px;
+  }
+
+  .input {
+    width: 3ch;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.addToCartButton {
+  composes: button;
+  margin-left: auto;
+}
+
+@media (hover: hover) {
+  .cardImage:hover {
+    transform: scale(1.3);
+  }
+}

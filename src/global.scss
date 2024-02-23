@@ -5,7 +5,8 @@ html {
   --main-colour: #323232;
   --main-font: 'Source Sans 3', sans-serif;
   --secondary-font: 'Lobster', sans-serif;
-  --header-footer-border: 3px solid var(--main-colour);
+  --main-border: 3px solid var(--main-colour);
+  --star-icon-colour: invert(16%) sepia(92%) saturate(4420%) hue-rotate(148deg) brightness(82%) contrast(92%);
 }
 
 * {
