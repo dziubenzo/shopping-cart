@@ -3,10 +3,10 @@ import Home from './Home';
 import Products from './Products';
 import Cart from './Cart';
 import ErrorPage from './ErrorPage';
-import css from './App.module.scss';
 import AppTitle from './AppTitle';
 import NavBar from './NavBar';
 import DevInfo from './DevInfo';
+import css from './App.module.scss';
 
 function App({ route }) {
   return (
