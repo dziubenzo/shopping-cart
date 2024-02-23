@@ -1,7 +1,32 @@
 import PropTypes from 'prop-types';
 import css from './ProductCard.module.scss';
+import { useState } from 'react';
 
 function ProductCard({ id, title, image, price, description, rate, count }) {
+  const [quantity, setQuantity] = useState(0);
+
+  function handleDecreaseQuantity() {
+    if (quantity === 0) {
+      return;
+    }
+    setQuantity(quantity - 1);
+  }
+
+  function handleIncreaseQuantity() {
+    if (quantity === 99) {
+      return;
+    }
+    setQuantity(quantity + 1);
+  }
+
+  function handleInputQuantity(event) {
+    const value = Number(event.target.value);
+    if (value < 0 || value > 99) {
+      return;
+    }
+    setQuantity(value);
+  }
+
   return (
     <div className={css.card}>
       <div className={css.cardImageWrapper}>
@@ -17,7 +42,11 @@ function ProductCard({ id, title, image, price, description, rate, count }) {
           <p className={css.count}>{count} votes</p>
         </div>
         <div className={css.quantity}>
-          <button className={css.button} type="button">
+          <button
+            className={css.button}
+            type="button"
+            onClick={handleDecreaseQuantity}
+          >
             <img
               className={css.buttonIcon}
               src="./minus-box.svg"
@@ -29,9 +58,15 @@ function ProductCard({ id, title, image, price, description, rate, count }) {
             type="number"
             name={'product' + id}
             id={'product' + id}
-            value={99}
+            max={99}
+            value={quantity}
+            onChange={handleInputQuantity}
           />
-          <button className={css.button} type="button">
+          <button
+            className={css.button}
+            type="button"
+            onClick={handleIncreaseQuantity}
+          >
             <img
               className={css.buttonIcon}
               src="./plus-box.svg"
@@ -52,7 +87,7 @@ function ProductCard({ id, title, image, price, description, rate, count }) {
 }
 
 ProductCard.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   title: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.number,
