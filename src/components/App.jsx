@@ -15,7 +15,6 @@ function App({ route }) {
   const { data, error, loading } = useFetch(
     'https://fakestoreapi.com/products',
   );
-  // Cart
   const [cart, setCart] = useState([]);
 
   // Set cart once the products are fetched
@@ -34,7 +33,18 @@ function App({ route }) {
     }
   }, [cart.length, data]);
 
-  function handleAddToCart(quantity, id) {}
+  function handleAddToCart(quantity, id) {
+    setCart(
+      cart.map((item) => {
+        if (item.id === id) {
+          item.quantity += quantity;
+          return item;
+        } else {
+          return item;
+        }
+      }),
+    );
+  }
 
   return (
     <>
