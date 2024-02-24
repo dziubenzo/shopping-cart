@@ -5,7 +5,7 @@ function CartItem({ count, title, quantity, price, handleItemChange }) {
   return (
     <tr>
       <th scope="row">{count}</th>
-      <td className={css.price}>{title}</td>
+      <td className={css.title}>{title}</td>
       <td>{price.toFixed(2)}</td>
       <td className={css.quantity}>{quantity}</td>
       <td>{(quantity * price).toFixed(2)}</td>

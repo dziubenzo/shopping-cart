@@ -25,6 +25,13 @@ function Cart({ cart, handleCart, cartItemCount }) {
     return cartItems;
   }
 
+  // Calculate total amount to be paid
+  function getTotal() {
+    return cart.reduce((total, currentItem) => {
+      return (total += currentItem.quantity * currentItem.price);
+    }, 0);
+  }
+
   // Decrease or increase item quantity or remove it from cart
   function handleItemChange(itemTitle, mode) {
     handleCart(
@@ -69,6 +76,12 @@ function Cart({ cart, handleCart, cartItemCount }) {
           </thead>
           <tbody>{renderItemsInCart()}</tbody>
         </table>
+        <div className={css.totalWrapper}>
+          <button disabled="disabled">
+            Proceed To Checkout <br />
+            <span>({getTotal().toFixed(2)} $)</span>
+          </button>
+        </div>
       </div>
     </>
   );
