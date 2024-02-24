@@ -62,7 +62,7 @@ function App({ route }) {
             handleCart={handleAddToCart}
           />
         )}
-        {route === 'cart' && <Cart />}
+        {route === 'cart' && <Cart cart={cart}/>}
         {route === 'error' && <ErrorPage />}
       </main>
       <footer>
