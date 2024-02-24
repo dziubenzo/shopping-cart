@@ -1,23 +1,16 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import css from './NavBar.module.scss';
 
 function NavBar({ cartItemCount }) {
-  // Add active class to the currently browsed tab
-  const [active, setActive] = useState('home');
-
-  function handleActive(event) {
-    setActive(event.target.textContent.toLowerCase());
-  }
-
+  // Apply class based on current path
+  const location = useLocation();
   return (
     <nav className={css.nav}>
       <ul className={css.list}>
         <li>
           <Link
-            onClick={handleActive}
-            className={active === 'home' ? css.active : css.link}
+            className={location.pathname === '/' ? css.active : css.link}
             to={'/'}
           >
             Home
@@ -25,8 +18,9 @@ function NavBar({ cartItemCount }) {
         </li>
         <li>
           <Link
-            onClick={handleActive}
-            className={active === 'products' ? css.active : css.link}
+            className={
+              location.pathname === '/products' ? css.active : css.link
+            }
             to={'/products'}
           >
             Products
@@ -34,9 +28,8 @@ function NavBar({ cartItemCount }) {
         </li>
         <li>
           <Link
-            onClick={handleActive}
             data-count={cartItemCount}
-            className={active === 'cart' ? css.active : css.link}
+            className={location.pathname === '/cart' ? css.active : css.link}
             to={'/cart'}
           >
             Cart
