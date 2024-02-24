@@ -46,11 +46,22 @@ function App({ route }) {
     );
   }
 
+  // Calculate the number of items in cart
+  function getCartItemCount(cart) {
+    let count = 0;
+    for (const item of cart) {
+      if (item.quantity > 0) {
+        count++;
+      }
+    }
+    return count;
+  }
+
   return (
     <>
       <header className={css.header}>
         <AppTitle />
-        <NavBar />
+        <NavBar cartItemCount={getCartItemCount(cart)} />
       </header>
       <main>
         {route === 'home' && <Home />}
@@ -62,7 +73,13 @@ function App({ route }) {
             handleCart={handleAddToCart}
           />
         )}
-        {route === 'cart' && <Cart cart={cart} handleCart={setCart} />}
+        {route === 'cart' && (
+          <Cart
+            cart={cart}
+            handleCart={setCart}
+            cartItemCount={getCartItemCount(cart)}
+          />
+        )}
         {route === 'error' && <ErrorPage />}
       </main>
       <footer>

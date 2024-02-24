@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import css from './NavBar.module.scss';
 
-function NavBar() {
+function NavBar({ cartItemCount }) {
   // Add active class to the currently browsed tab
   const [active, setActive] = useState('home');
 
@@ -34,6 +35,7 @@ function NavBar() {
         <li>
           <Link
             onClick={handleActive}
+            data-count={cartItemCount}
             className={active === 'cart' ? css.active : css.link}
             to={'/cart'}
           >
@@ -44,5 +46,9 @@ function NavBar() {
     </nav>
   );
 }
+
+NavBar.propTypes = {
+  cartItemCount: PropTypes.number,
+};
 
 export default NavBar;

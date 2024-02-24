@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import CartItem from './CartItem';
 import css from './Cart.module.scss';
 
-function Cart({ cart, handleCart }) {
+function Cart({ cart, handleCart, cartItemCount }) {
   // Show items with quantity > 0
   function renderItemsInCart() {
     let cartItems = [];
@@ -49,9 +49,9 @@ function Cart({ cart, handleCart }) {
       <div className={css.wrapper}>
         <h2 className={css.title}>
           Cart (
-          {renderItemsInCart().length === 1
-            ? `${renderItemsInCart().length} item`
-            : `${renderItemsInCart().length} items`}
+          {cartItemCount === 1
+            ? `${cartItemCount} item`
+            : `${cartItemCount} items`}
           )
         </h2>
         <table>
@@ -77,6 +77,7 @@ function Cart({ cart, handleCart }) {
 Cart.propTypes = {
   cart: PropTypes.array,
   handleCart: PropTypes.func,
+  cartItemCount: PropTypes.number,
 };
 
 export default Cart;
