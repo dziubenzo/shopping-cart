@@ -2,7 +2,16 @@ import PropTypes from 'prop-types';
 import css from './ProductCard.module.scss';
 import { useState } from 'react';
 
-function ProductCard({ id, title, image, price, description, rate, count }) {
+function ProductCard({
+  id,
+  title,
+  image,
+  price,
+  description,
+  rate,
+  count,
+  handleCart,
+}) {
   const [quantity, setQuantity] = useState(0);
 
   function handleDecreaseQuantity() {
@@ -25,6 +34,11 @@ function ProductCard({ id, title, image, price, description, rate, count }) {
       return;
     }
     setQuantity(value);
+  }
+
+  function handleAddToCartClick() {
+    handleCart(quantity, id);
+    setQuantity(0);
   }
 
   return (
@@ -73,7 +87,11 @@ function ProductCard({ id, title, image, price, description, rate, count }) {
               alt="Increase Quantity Icon"
             />
           </button>
-          <button className={css.addToCartButton} type="button">
+          <button
+            className={css.addToCartButton}
+            type="button"
+            onClick={handleAddToCartClick}
+          >
             <img
               className={css.buttonIcon}
               src="./cart-plus.svg"
@@ -94,6 +112,7 @@ ProductCard.propTypes = {
   description: PropTypes.string,
   rate: PropTypes.number,
   count: PropTypes.number,
+  handleCart: PropTypes.func,
 };
 
 export default ProductCard;

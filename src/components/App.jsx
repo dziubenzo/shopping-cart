@@ -8,12 +8,33 @@ import NavBar from './NavBar';
 import DevInfo from './DevInfo';
 import css from './App.module.scss';
 import useFetch from '../helpers.jsx';
+import { useEffect, useState } from 'react';
 
 function App({ route }) {
   // Fetch data from Fake Store API
   const { data, error, loading } = useFetch(
     'https://fakestoreapi.com/products',
   );
+  // Cart
+  const [cart, setCart] = useState([]);
+
+  // Set cart once the products are fetched
+  useEffect(() => {
+    function createCart() {
+      let cart = [];
+      for (const item of data) {
+        item.quantity = 0;
+        cart.push(item);
+      }
+      return cart;
+    }
+
+    if (data && cart.length === 0) {
+      setCart(createCart());
+    }
+  }, [cart.length, data]);
+
+  function handleAddToCart(quantity, id) {}
 
   return (
     <>
@@ -24,7 +45,12 @@ function App({ route }) {
       <main>
         {route === 'home' && <Home />}
         {route === 'products' && (
-          <Products products={data} error={error} loading={loading} />
+          <Products
+            products={data}
+            error={error}
+            loading={loading}
+            handleCart={handleAddToCart}
+          />
         )}
         {route === 'cart' && <Cart />}
         {route === 'error' && <ErrorPage />}

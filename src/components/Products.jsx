@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import css from './Products.module.scss';
 
-function Products({ products, error, loading }) {
+function Products({ products, error, loading, handleCart }) {
   // Create ProductCard components for all products
   function createCards() {
     let productArray = [];
@@ -17,6 +17,7 @@ function Products({ products, error, loading }) {
           description={product.description}
           rate={product.rating.rate}
           count={product.rating.count}
+          handleCart={handleCart}
         />,
       );
     }
@@ -40,6 +41,7 @@ Products.propTypes = {
   products: PropTypes.array,
   error: PropTypes.object,
   loading: PropTypes.bool,
+  handleCart: PropTypes.func,
 };
 
 export default Products;
