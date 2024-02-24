@@ -1,0 +1,33 @@
+.price {
+  max-width: 40ch;
+}
+
+.quantity {
+  text-align: center;
+  font-weight: 700;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
+
+.buttonIcon {
+  height: 32px;
+  width: 32px;
+}
+
+.buttonCell {
+  text-align: center;
+}
+
+td,
+th {
+  padding: 0.5em;
+}
+
+th {
+  font-weight: 700;
+}
