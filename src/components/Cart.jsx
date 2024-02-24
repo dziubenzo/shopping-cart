@@ -53,36 +53,47 @@ function Cart({ cart, handleCart, cartItemCount }) {
   }
   return (
     <>
-      <div className={css.wrapper}>
-        <h2 className={css.title}>
-          Cart (
-          {cartItemCount === 1
-            ? `${cartItemCount} item`
-            : `${cartItemCount} items`}
-          )
-        </h2>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">No.</th>
-              <th scope="col">Title</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Total</th>
-              <th scope="col">Less</th>
-              <th scope="col">More</th>
-              <th scope="col">Remove</th>
-            </tr>
-          </thead>
-          <tbody>{renderItemsInCart()}</tbody>
-        </table>
-        <div className={css.totalWrapper}>
-          <button disabled="disabled">
-            Proceed To Checkout <br />
-            <span>({getTotal().toFixed(2)} $)</span>
-          </button>
+      {cartItemCount ? (
+        <div className={css.wrapper}>
+          <h2 className={css.title}>
+            Cart (
+            {cartItemCount === 1
+              ? `${cartItemCount} item`
+              : `${cartItemCount} items`}
+            )
+          </h2>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col">Less</th>
+                <th scope="col">More</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+            <tbody>{renderItemsInCart()}</tbody>
+          </table>
+          <div className={css.totalWrapper}>
+            <button className={css.button} disabled="disabled">
+              Proceed To Checkout <br />
+              <span>({getTotal().toFixed(2)} $)</span>
+            </button>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>
+          <h1>No items in cart</h1>
+          <img
+            className={css.sadFace}
+            src="./sad-face.svg"
+            alt="Sad Face Icon"
+          />
+        </div>
+      )}
     </>
   );
 }

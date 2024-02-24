@@ -16,7 +16,7 @@ table {
   text-align: center;
 }
 
-button {
+.button {
   font-size: 1rem;
   background-color: var(--main-colour);
   color: var(--bg-colour);
@@ -30,5 +30,17 @@ button {
     color: var(--bg-colour);
     font-weight: 800;
     font-size: 1.2rem;
+  }
+}
+
+.sadFace {
+  margin-top: 2em;
+  max-width: 200px;
+  transition: transform 0.2s ease-in;
+}
+
+@media (hover: hover) {
+  .sadFace:hover {
+    transform: rotate(-180deg);
   }
 }
