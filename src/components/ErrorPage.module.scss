@@ -1,0 +1,15 @@
+.wrapper {
+  text-align: center;
+}
+
+.code,
+.message {
+  font-size: 3rem;
+  font-family: var(--secondary-font);
+}
+
+.redirectMessage {
+  position: absolute;
+  bottom: 16px;
+  font-style: italic;
+}
