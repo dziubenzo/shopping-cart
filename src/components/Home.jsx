@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import useFetch from '../helpers.jsx';
 import css from './Home.module.scss';
 
@@ -7,20 +8,19 @@ function Home() {
     'http://history.muffinlabs.com/date',
   );
 
-  // Get and show one random event once events are fetched
-  function showRandomEvent() {
-    const events = data.data.Events;
-    const event = events[Math.floor(Math.random() * events.length)];
-    return (
-      <>
-        <h1 className={css.title}>On This Date...</h1>
-        <p className={css.year}>
-          {data.date}, {event.year}
-        </p>
-        <p className={css.event}>{event.text}</p>
-      </>
-    );
-  }
+  // Random event
+  const [randomEvent, setRandomEvent] = useState(null);
+
+  // Get random event once data are fetched
+  useEffect(() => {
+    if (data && !randomEvent) {
+      const events = data.data.Events;
+      const event = events[Math.floor(Math.random() * events.length)];
+      event.date = data.date;
+      setRandomEvent(event);
+    }
+  }, [data, randomEvent]);
+
   return (
     <>
       <h1 className={css.title}>Add Some Fake Products to Cart!</h1>
@@ -39,7 +39,15 @@ function Home() {
       <div className={css.onThisDay}>
         {loading && <p>Loading &apos;On This Day&apos; data...</p>}
         {error && <p>{error.message}</p>}
-        {data && showRandomEvent()}
+        {data && randomEvent && (
+          <>
+            <h1 className={css.title}>On This Date...</h1>
+            <p className={css.year}>
+              {randomEvent.date}, {randomEvent.year}
+            </p>
+            <p className={css.event}>{randomEvent.text}</p>
+          </>
+        )}
       </div>
     </>
   );
