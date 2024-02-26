@@ -33,14 +33,7 @@ table {
   }
 }
 
-.sadFace {
-  margin-top: 2em;
-  max-width: 200px;
-  transition: transform 0.2s ease-in;
-}
-
-@media (hover: hover) {
-  .sadFace:hover {
-    transform: rotate(-180deg);
-  }
+.cartEmptyMessage {
+  font-size: 3rem;
+  font-family: var(--secondary-font);
 }

@@ -86,12 +86,7 @@ function Cart({ cart, handleCart, cartItemCount }) {
         </div>
       ) : (
         <div>
-          <h1>No items in cart</h1>
-          <img
-            className={css.sadFace}
-            src="./sad-face.svg"
-            alt="Sad Face Icon"
-          />
+          <h1 className={css.cartEmptyMessage}>No items in cart</h1>
         </div>
       )}
     </>
