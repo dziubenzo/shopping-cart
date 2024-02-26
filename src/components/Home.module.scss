@@ -1,42 +1,27 @@
 .title {
+  font-size: 2.5rem;
+  text-align: center;
+  align-self: center;
   font-family: var(--secondary-font);
 }
 
-.titleBottom {
-  font-family: var(--secondary-font);
-}
-
-.wrapperQuote {
-  max-width: 50%;
-}
-
-.textQuote {
+.loading,
+.event {
   font-style: italic;
-  padding: 1em 0;
-  border-top: 1px solid var(--main-colour);
-  border-bottom: 1px solid var(--main-colour);
-}
-
-.quoteAuthor {
-  font-weight: 600;
-  text-align: right;
 }
 
 .onThisDay {
-  composes: wrapperQuote;
+  position: absolute;
+  max-width: 50%;
   border-top: var(--header-footer-border);
-  padding-top: 0.75em;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  bottom: 32px;
 }
 
 .year {
   font-size: 1.5rem;
   font-weight: 700;
-}
-
-.event {
-  font-style: italic;
 }

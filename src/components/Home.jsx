@@ -24,20 +24,10 @@ function Home() {
   return (
     <>
       <h1 className={css.title}>Add Some Fake Products to Cart!</h1>
-      <div className={css.wrapperQuote}>
-        <blockquote className={css.textQuote}>
-          &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          repudiandae ab at doloribus facere numquam consectetur molestiae
-          voluptatum placeat, consequuntur laudantium, perferendis optio beatae
-          error, aliquam quod iusto non necessitatibus perspiciatis expedita
-          dolores eligendi cupiditate accusamus. Doloremque est temporibus
-          laboriosam dolorem? Delectus similique assumenda repellat consectetur.
-          Incidunt hic recusandae eius?&quot;
-        </blockquote>
-        <p className={css.quoteAuthor}>– Dr Lorem Ipsum</p>
-      </div>
       <div className={css.onThisDay}>
-        {loading && <p>Loading &apos;On This Day&apos; data...</p>}
+        {loading && (
+          <p className={css.loading}>Loading &apos;On This Date&apos; data...</p>
+        )}
         {error && <p>{error.message}</p>}
         {data && randomEvent && (
           <>
