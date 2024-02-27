@@ -5,7 +5,7 @@ import css from './Home.module.scss';
 function Home() {
   // Fetch data from Today in History API
   const { data, error, loading } = useFetch(
-    'http://history.muffinlabs.com/date',
+    'https://history.muffinlabs.com/date',
   );
 
   // Random event
