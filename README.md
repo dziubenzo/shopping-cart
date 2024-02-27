@@ -1,6 +1,6 @@
 # Odin Project - Shopping Cart
 
-A mock shopping cart as required by TOP to practice concepts such as data fetching in React, PropTypes and testing with RTL.
+A mock shopping cart as required by TOP to practise concepts such as data fetching in React, PropTypes and testing with RTL.
 
 ## Features
 
