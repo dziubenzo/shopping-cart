@@ -37,3 +37,28 @@ table {
   font-size: 3rem;
   font-family: var(--secondary-font);
 }
+
+@media screen and (width <= 600px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .wrapper {
+    width: 100%;
+    font-size: 0.55rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    max-height: 70px;
+    max-width: 200px;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .cartEmptyMessage {
+    font-size: 2.5rem;
+  }
+}

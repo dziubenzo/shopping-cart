@@ -6,7 +6,8 @@ html {
   --main-font: 'Source Sans 3', sans-serif;
   --secondary-font: 'Lobster', sans-serif;
   --main-border: 3px solid var(--main-colour);
-  --star-icon-colour: invert(16%) sepia(92%) saturate(4420%) hue-rotate(148deg) brightness(82%) contrast(92%);
+  --star-icon-colour: invert(16%) sepia(92%) saturate(4420%) hue-rotate(148deg)
+    brightness(82%) contrast(92%);
 }
 
 * {
@@ -32,4 +33,11 @@ html {
   outline: 4px solid var(--main-colour);
   outline-offset: 0.25em;
   border-radius: 4px;
+}
+
+@media screen and (width <= 600px) {
+  #root {
+    padding: 0;
+    margin: initial;
+  }
 }

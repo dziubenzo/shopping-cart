@@ -122,3 +122,103 @@ input[type='number'] {
     transform: scale(1.3);
   }
 }
+
+@media screen and (width <= 600px) {
+  .card {
+    gap: 8px;
+  }
+
+  .cardImageWrapper {
+    .cardImage {
+      max-width: 110px;
+      transition: none;
+    }
+  }
+
+  .cardInfo {
+    padding: 0.25em;
+
+    .title {
+      font-size: 1.2rem;
+      min-height: initial;
+    }
+
+    .description {
+      font-size: 0.6rem;
+      min-height: initial;
+    }
+
+    .price {
+      font-size: 1.5rem;
+    }
+
+    .rating {
+      .star {
+        width: 22px;
+      }
+    }
+  }
+
+  .quantity {
+    .buttonIcon {
+      height: 26px;
+      width: 26px;
+    }
+
+    .input {
+      width: 3ch;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+}
+
+@media screen and (width > 600px) and (width <= 900px) {
+  .card {
+    gap: 8px;
+  }
+
+  .cardImageWrapper {
+    .cardImage {
+      max-width: 160px;
+      transition: none;
+    }
+  }
+
+  .cardInfo {
+    padding: 0.25em;
+
+    .title {
+      font-size: 1.2rem;
+      min-height: initial;
+    }
+
+    .description {
+      font-size: 0.65rem;
+      min-height: initial;
+    }
+
+    .price {
+      font-size: 1.5rem;
+    }
+
+    .rating {
+      .star {
+        width: 22px;
+      }
+    }
+  }
+
+  .quantity {
+    .buttonIcon {
+      height: 26px;
+      width: 26px;
+    }
+
+    .input {
+      width: 3ch;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+}

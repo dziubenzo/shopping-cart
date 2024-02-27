@@ -37,3 +37,14 @@ a[data-count] {
   color: var(--bg-colour);
   border-radius: 16px;
 }
+
+@media screen and (width <= 600px) {
+  .nav {
+    justify-self: center;
+  }
+
+  .list {
+    gap: 8px;
+    width: 100%;
+  }
+}

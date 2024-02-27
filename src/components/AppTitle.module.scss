@@ -3,3 +3,9 @@
   font-family: var(--secondary-font);
   margin-right: auto;
 }
+
+@media screen and (width <= 600px) {
+  .appTitle {
+    margin-right: initial;
+  }
+}

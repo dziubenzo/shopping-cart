@@ -13,3 +13,10 @@
   bottom: 32px;
   font-style: italic;
 }
+
+@media screen and (width <= 600px) {
+  .code,
+  .message {
+    font-size: 2.5rem;
+  }
+}
