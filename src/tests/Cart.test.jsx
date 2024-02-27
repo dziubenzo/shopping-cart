@@ -26,7 +26,7 @@ describe('Cart component', () => {
   });
 
   it('displays proper cart total value', () => {
-    render(<Cart cart={sampleProducts}></Cart>);
+    render(<Cart cart={sampleProducts} cartItemCount={1}></Cart>);
 
     const proceedToCheckoutButton = screen.getByText(/proceed/i);
 
