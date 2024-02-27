@@ -8,7 +8,7 @@ function CartItem({ count, title, quantity, price, handleItemChange }) {
       <td className={css.title}>{title}</td>
       <td>{price.toFixed(2)}</td>
       <td className={css.quantity}>{quantity}</td>
-      <td>{(quantity * price).toFixed(2)}</td>
+      <td data-testid="total-cell">{(quantity * price).toFixed(2)}</td>
       <td className={css.buttonCell}>
         <button
           className={css.button}
