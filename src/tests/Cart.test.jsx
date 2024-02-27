@@ -1,7 +1,38 @@
 import { it, expect, vi, describe, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import Cart from '../components/Cart';
 import CartItem from '../components/CartItem';
+
+describe('Cart component', () => {
+  const sampleProducts = [
+    {
+      id: 1,
+      title: 'Sample Product',
+      price: 10.0,
+      image: 'Test',
+      description: 'Test',
+      rating: { rate: 0.1, count: 999 },
+      quantity: 10,
+    },
+  ];
+
+  it('displays proper item count', () => {
+    render(<Cart cart={sampleProducts} cartItemCount={5}></Cart>);
+
+    const heading = screen.getByRole('heading');
+
+    expect(heading.textContent).toMatch(/5/);
+  });
+
+  it('displays proper cart total value', () => {
+    render(<Cart cart={sampleProducts}></Cart>);
+
+    const proceedToCheckoutButton = screen.getByText(/proceed/i);
+
+    expect(proceedToCheckoutButton.textContent).toMatch(/100.00/);
+  });
+});
 
 describe('CartItem component', () => {
   let user;
